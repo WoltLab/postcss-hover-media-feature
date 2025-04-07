@@ -75,6 +75,20 @@ describe('basic usage', () => {
       '.list__item:not(:hover, .is-editing) .show-on-hover { visibility: hidden }'
     )
   })
+
+  it('ignores nested :hover pseudo-class selectors within :not pseudo-class selector lists', () => {
+    run(
+      '.list__item:not(.some-selector:hover) .show-on-hover { visibility: hidden }',
+      '.list__item:not(.some-selector:hover) .show-on-hover { visibility: hidden }'
+    )
+  })
+
+  it('ignores :hover pseudo-class selectors within :has pseudo-class selector lists', () => {
+    run(
+      '.list__item:has(.some-selector:hover) .show-on-hover { visibility: hidden }',
+      '.list__item:has(.some-selector:hover) .show-on-hover { visibility: hidden }'
+    )
+  })
 })
 
 describe('when `fallback: true`', () => {
