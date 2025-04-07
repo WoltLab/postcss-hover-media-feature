@@ -7,9 +7,16 @@ const selectorProcessor = selectorParser(selectors => {
     if (
       selector.type === 'pseudo' &&
       selector.toString() === ':hover' &&
-      selector.parent.value !== ':not' &&
       selector.parent.toString() !== ':hover'
     ) {
+      let parent = selector.parent
+      while (parent !== undefined) {
+        if (parent.value === ':has' || parent.value === ':not') {
+          return
+        }
+
+        parent = parent.parent
+      }
       hoverSelectors.push(selector.parent.toString())
     }
   })
