@@ -1,6 +1,6 @@
 {
-  "name": "postcss-hover-media-feature",
-  "version": "1.0.2",
+  "name": "@woltlab/postcss-hover-media-feature",
+  "version": "1.0.3+woltlab",
   "description": "PostCSS plugin that extracts and wraps rules containing `:hover` pseudo-classes in `@media (hover: hover) {}` media queries",
   "keywords": [
     "postcss",
@@ -29,7 +29,7 @@
   },
   "author": "Saul Hardman <hello@iamsaul.co.uk>",
   "license": "MIT",
-  "repository": "saulhardman/postcss-hover-media-feature",
+  "repository": "WoltLab/postcss-hover-media-feature",
   "devDependencies": {
     "@babel/core": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
